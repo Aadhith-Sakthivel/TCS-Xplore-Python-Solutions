@@ -1,0 +1,33 @@
+def check_prime(num):
+flag=0
+for i in range(2,num): 
+  if num%i ==0:
+  flag=1 
+  break
+  else: 
+    flag=0 
+if flag == 1: 
+  return 0 
+else:
+  return 1 
+def prime_composite_list(list_input): 
+  p_list = [] 
+  c_list=[]
+  o_list=[]
+  for j in list_input:
+    k = check_prime(j) 
+    if k==0: 
+      c_list.append(j)
+    else: 
+      p_list.append(j) 
+   o_list.append(p_list) 
+   o_list.append(c_list) 
+   return o_list
+if __name__=="__main__":
+n=int(input())
+l=[] 
+for i in range(n):
+  a=int(input()) 
+  l.append(a)
+print(check_prime(l[1])) 
+print(prime_composite_list(l))
